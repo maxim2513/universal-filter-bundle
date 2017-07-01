@@ -1,0 +1,1 @@
+Universal filter for symfony 2
