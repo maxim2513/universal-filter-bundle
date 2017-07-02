@@ -1,0 +1,33 @@
+{
+  "name" : "maxim2513/universal-filter-bundle",
+  "description" : "A universal filter bundle",
+  "type" : "symfony-bundle",
+  "authors" : [{
+    "name" : "Morozov Maxim",
+    "email" : "morozovmaxim25@gmail.com"
+  }],
+  "keywords" : [
+    "universal filter",
+    "symfony bundle"
+  ],
+  "license" : [
+    "MIT"
+  ],
+  "require" : {
+    "php": ">=7.0",
+    "doctrine/doctrine-bundle" : "1.6.*"
+  },
+  "autoload" : {
+    "psr-0" : {
+      "MaximMV/Bundle" : ""
+    }
+  },
+  "target-dir" : "MaximMV/Bundle",
+  "repositories" : [{
+  }],
+  "extra" : {
+    "branch-alias" : {
+      "dev-master" : "max-dev"
+    }
+  }
+}

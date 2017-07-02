@@ -1,4 +1,24 @@
 services:
-#    universal_filter.example:
-#        class: MaximMV\Bundle\UniversalFilterBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    universal_filter.search_manager:
+        class: MaximMV\Bundle\UniversalFilterBundle\Filter\SearchManager
+        public: false
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    universal_filter.search_factory:
+        class: MaximMV\Bundle\UniversalFilterBundle\Filter\SearchFactory
+        arguments:
+            entityManager: '@doctrine.orm.entity_manager'
+            searchManager: '@universal_filter.search_manager'
+            entities: '%universal_filter.mapping%'
+
+    universal_filter.filter_chain:
+        class: MaximMV\Bundle\UniversalFilterBundle\Chain\FilterChain
+
+
+
+
+
+
+
+

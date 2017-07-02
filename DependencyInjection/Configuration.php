@@ -12,13 +12,20 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
+    private $alias;
+
+    public function __construct($alias)
+    {
+        $this->alias = $alias;
+    }
+
     /**
      * {@inheritdoc}
      */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('universal_filter');
+        $rootNode = $treeBuilder->root($this->alias);
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
